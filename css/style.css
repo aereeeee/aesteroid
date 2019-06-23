@@ -1,0 +1,19 @@
+/* @charset:"utf-8"; */
+@import url('https://fonts.googleapis.com/css?family=Bungee|Kumar+One|Space+Mono');
+div,h1 {
+    -webkit-user-select: none; /* Chrome, Opera, Safari */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+body{overflow: hidden; background-color:#000;}
+#star{width:100%;height:100%;position:fixed;left:0;top:0;}
+#ast{width:100%;height:100%;position:absolute;left:0;top:0;}
+#wrap{width:100%; height:100%;position:absolute;}
+.title{width:50%; height:80%; margin:0;padding:0;position:absolute;left:0;top:0;padding:10px;}
+h1{color:#fff; font-size: 200px; font-family: 'Kumar One', cursive;}
+h1.tc{display:inline;}
+h1.bar{float:left;position:absolute;right:0;top:0;}
+h1.four{position:absolute;bottom:-50px;right:0;}
+.cont {color:#ddd;width:60%;height:auto;font-family: 'Space Mono', monospace;position:absolute;left:0;bottom:0;}
+

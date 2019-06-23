@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TC4</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/p5.js"></script>
+  <script type="text/javascript" src="js/asteroid.js"></script>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="star"></div>
+  <div id="ast"></div>
+  <div id="wrap">
+    <div class="title">
+        <h1 class="tc">TC</p>
+        <h1 class="bar">-</h1>
+        <h1 class="four">4</h1>
+        <div class="cont">
+
+            <p>
+              Lorem ipsum dolorsit amet, consectetur adipiscing elit. Sed in nunc a tortor placerat tempus at eu libero. Morbi in turpis cursus, commodo ex vitae, molestie purus. In rutrum feugiat enim nec suscipit. Vivamus eu malesuada dui. Quisque purus ante, pulvinar eget dui non, pretium gravida urna. Nunc et bibendum nibh. Cras tincidunt, ipsum ut maximus venenatis, sapien orci eleifend elit, sollicitudin tristique lorem ipsum a justo.
+            </p>
+        </div>
+    </div>
+    <div class="menu">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div> 
+  </div>
+   
+
+    <script>
+        $(window).resize(function(){
+          location.reload();
+        });
+
+      var wrap=$('#wrap');
+      var title=$('.title');
+     
+
+      var wrapW=wrap.width();
+      var wrapH=wrap.height();
+
+      var titleW=title.width();
+      var titleH=title.height();
+
+      var titleL=wrapW/2-titleW/2;
+      var titleT=wrapH/2-titleH/2;
+
+      title.css({'left':titleL,'top':titleT});
+
+
+    </script>
+  
+ 
+
+</body>
+</html>
