@@ -77,3 +77,16 @@ h1.four {
   left: 0;
   bottom: 0;
 }
+
+@media screen and (orientation: portrait) {
+  .title {
+    width: 90%;
+    height: 90%;
+  }
+  h1 {
+    font-size: 300px;
+  }
+  .cont p {
+    font-size: 32px;
+  }
+}

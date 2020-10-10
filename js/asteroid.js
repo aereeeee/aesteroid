@@ -1,8 +1,19 @@
+const isMobileDevice = () => {
+  return navigator.userAgent.indexOf('Mobi') > -1;
+}
+
 const drawStars = (p) => {
-  const stars = 500;
-  const x = new Array(stars);
-  const y = new Array(stars);
-  const speed = new Array(stars);
+  let count = 100;
+  const maxCount = 2000;
+  const minCount = 100;
+  const minSize = 0.5;
+  const maxSize = 2.5;
+  const controlOffset = 0.2;
+
+  const x = new Array(count);
+  const y = new Array(count);
+  const speed = new Array(count);
+  
   let myc;
 
   p.setup = () => {
@@ -11,10 +22,10 @@ const drawStars = (p) => {
     p.noStroke();
 
     let i = 0;
-    while (i < stars) {
+    while (i < maxCount) {
       x[i] = p.random(0, p.width);
       y[i] = p.random(0, p.height);
-      speed[i] = p.random(0.5, 2);
+      speed[i] = p.random(minSize, maxSize);
       i += 1;
     };
   };
@@ -24,7 +35,7 @@ const drawStars = (p) => {
     p.rect(0, 0, p.width, p.height);
 
     let i = 0;
-    while (i < stars) {
+    while (i < count) {
       p.fill(100 * speed[i]);
       p.ellipse(x[i], y[i], speed[i], speed[i]);
       y[i] += speed[i];
@@ -38,9 +49,21 @@ const drawStars = (p) => {
       i += 1;
     };
   };
+
+  p.mouseWheel = (e) => {
+    console.log(count)
+    let value = count;
+    value += e.delta * controlOffset;
+
+    if(value > maxCount || value < minCount) return;
+
+    count = value;
+  }
 }
 
 const drawAesteroid = (p) => {
+  const isMobile = isMobileDevice();
+  const scale = isMobile ? 2.5 : 3;
   let myc;
   let asteroid;
   let tex;
@@ -58,11 +81,11 @@ const drawAesteroid = (p) => {
     const dirX = (p.mouseX / p.width) * 6;
     p.directionalLight(200, 200, 200, dirX, dirY, 1);
     p.rotateZ(p.frameCount * 0.001);
-    p.rotateX(p.frameCount * 0.001);
+    p.rotateX(p.frameCount * 0.004);
     p.rotateY(p.frameCount * 0.008);
     p.orbitControl();
     p.texture(tex);
-    p.scale(2.5);
+    p.scale(scale);
     p.model(asteroid);
   };
 }
